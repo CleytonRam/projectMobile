@@ -24,6 +24,9 @@ public class PlayerController : Singleton<PlayerController>
     [Header("PowerUps")]
     public bool invincible = false;
 
+    [Header("Coin Setup")]
+    public GameObject coinCollector;
+
     public GameObject endScreen;
 
     //privates
@@ -121,7 +124,12 @@ public class PlayerController : Singleton<PlayerController>
         /*var p = transform.position;
         p.y = _startPosition.y;
         transform.position = p;*/
-        transform.DOMoveY(_startPosition.y, animationDuration);
+        transform.DOMoveY(_startPosition.y, 0.2f);
+    }
+
+    public void ChangeCoinCollectorSize(float amount)
+    {
+        coinCollector.transform.localScale = Vector3.one * amount;
     }
     #endregion
 }

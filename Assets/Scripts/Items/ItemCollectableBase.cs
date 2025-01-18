@@ -12,7 +12,7 @@ public class ItemCollectableBase : MonoBehaviour {
 
     [SerializeField] protected int _amount = 1;
 
-    public ParticleSystem particleSystem;
+    //public ParticleSystem particleSystem;
     public float timeToHide = 3;
     public GameObject gaphicItem;
 
@@ -21,9 +21,9 @@ public class ItemCollectableBase : MonoBehaviour {
 
 
     private void Awake() {
-        ///*if (particleSystem != null) {
-        ///       particleSystem.transform.SetParent(null);
-     ///   }
+        /*if (particleSystem != null) {
+               particleSystem.transform.SetParent(null);
+       }*/
     }
 
 
@@ -49,8 +49,8 @@ public class ItemCollectableBase : MonoBehaviour {
 
     protected virtual void OnCollect() {
 
-        if (particleSystem != null) { 
-            particleSystem.Play(); 
+        if (GetComponent<ParticleSystem>() != null) { 
+            GetComponent<ParticleSystem>().Play(); 
         }
 
         if (audioSource != null) {

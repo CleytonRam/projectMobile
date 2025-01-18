@@ -21,8 +21,7 @@ public class PowerUpHeight : PowerUpBase
     {
         base.EndPowerUp();
         PlayerController.Instance.ResetHeight(animationDuration);
-        
-
+        PlayerController.Instance.SetPowerUpText("Flight");
     }
 
 }
