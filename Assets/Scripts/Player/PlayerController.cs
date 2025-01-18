@@ -16,6 +16,8 @@ public class PlayerController : Singleton<PlayerController>
     public string tagToCheckEnemy = "Enemy";
     public string tagToCheckEnd = "EndLine";
 
+    [Header("PowerUps")]
+    public bool invincible = false;
 
     public GameObject endScreen;
 
@@ -50,15 +52,22 @@ public class PlayerController : Singleton<PlayerController>
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.transform.tag == tagToCheckEnemy) 
-        { 
-          EndGame();
+        {
+            if (!invincible) 
+            { 
+                EndGame(); 
+            }
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.tag == tagToCheckEnd) {
-            EndGame();
+        if (other.transform.tag == tagToCheckEnd) 
+        {
+            if (!invincible)
+            {
+                EndGame();
+            }
         }
     }
     private void EndGame()
@@ -85,6 +94,11 @@ public class PlayerController : Singleton<PlayerController>
     public void ResetSpeed()
     {
         _currentSpeed = speed;
+    }
+
+    public void SetInvincible(bool b = true) 
+    {
+        invincible = b;
     }
     #endregion
 }
