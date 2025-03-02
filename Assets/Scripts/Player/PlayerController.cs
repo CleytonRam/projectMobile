@@ -32,6 +32,8 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")]
     public AnimatorManager animatorManager;
 
+    
+
     //privates
     private bool _canRun;
     private Vector3 _pos;
@@ -92,6 +94,7 @@ public class PlayerController : Singleton<PlayerController>
         _canRun = false;
         endScreen.SetActive(true);
         animatorManager.Play(animationType);
+        
 
     }
 

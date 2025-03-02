@@ -8,4 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SCN_Main.unity
     guid: 59f4b39cbd5581b4480f048c9ed6a1f2
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
+      guid: c17b33dc8222b8840918864730028520, type: 2}

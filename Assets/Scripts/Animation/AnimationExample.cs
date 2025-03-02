@@ -5,21 +5,21 @@ using UnityEngine;
 
 public class AnimationExample : MonoBehaviour
 {
-    public Animation animation;
+    public new Animation animation;
 
     public AnimationClip run;
     public AnimationClip idle;
 
     private void Update()
     {
-        if ( (Input.GetKeyDown(KeyCode.A)))
-        {
-            PlayAnimation(run);          
-        }
-        else if ((Input.GetKeyDown(KeyCode.S)))
-        {
-            PlayAnimation(idle);      
-        }
+        //if ( (Input.GetKeyDown(KeyCode.A)))
+        //{
+        //    PlayAnimation(run);          
+        //}
+        //else if ((Input.GetKeyDown(KeyCode.S)))
+        //{
+        //    PlayAnimation(idle);      
+        //}
     }
 
     private void PlayAnimation(AnimationClip c)
