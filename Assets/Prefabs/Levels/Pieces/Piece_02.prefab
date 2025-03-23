@@ -92,6 +92,7 @@ GameObject:
   - component: {fileID: 1902870796970615899}
   - component: {fileID: 7202474609682402355}
   - component: {fileID: 2126932116747749802}
+  - component: {fileID: 9210099185736939538}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -186,6 +187,21 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &9210099185736939538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2294978854200309814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e2809b5cec31154fb2a198d9f415484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 1
+  meshRenderer: {fileID: 7202474609682402355}
+  startColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &3691267814508674258
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,6 +1029,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6192778956548444505, guid: 8cdb0fb91d3263242b471322795f60a0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8160536964137480246, guid: 8cdb0fb91d3263242b471322795f60a0,
         type: 3}
