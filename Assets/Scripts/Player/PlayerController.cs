@@ -33,7 +33,10 @@ public class PlayerController : Singleton<PlayerController>
     public AnimatorManager animatorManager;
 
     [SerializeField] private BounceHelper _bounceHelper;
+    public Ease ease = Ease.OutBack;
+    public float playerScaleDuration = .5f;
 
+   
 
 
     //privates
@@ -47,9 +50,19 @@ public class PlayerController : Singleton<PlayerController>
     {
         _startPosition = transform.position;
         ResetSpeed();
-        
+        ScaleAtStart();
+
+      
+
+
     }
 
+
+    public void ScaleAtStart() 
+    {
+        transform.localScale = Vector3.zero;
+        transform.DOScale(Vector3.one, playerScaleDuration).SetEase(ease);
+    }
     public void Bounce()
     {
         if (_bounceHelper != null)
@@ -156,5 +169,7 @@ public class PlayerController : Singleton<PlayerController>
     {
         coinCollector.transform.localScale = Vector3.one * amount;
     }
+
+    
     #endregion
 }
