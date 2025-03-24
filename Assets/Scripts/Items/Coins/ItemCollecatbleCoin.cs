@@ -15,6 +15,9 @@ public class ItemCollecatbleCoin : ItemCollectableBase
     public float lerp = 5f;
     public float minDistance = 1f;
 
+    [Header("Coin Particles")]
+    public ParticleSystem coinParticles;
+
     public void Start()
     {
         CoinsAnimationManager.Instance.RegisterCoin(this);
@@ -27,7 +30,7 @@ public class ItemCollecatbleCoin : ItemCollectableBase
         colider.enabled = false;
         collect = true;
         PlayerController.Instance.Bounce();
-
+        PlayCollectParticles();
     }
 
     protected override void Collect()
@@ -46,6 +49,16 @@ public class ItemCollecatbleCoin : ItemCollectableBase
 
                 Destroy(gameObject);
             }
+        }
+    }
+
+    private void PlayCollectParticles() 
+    {
+        if (coinParticles != null)
+        {
+            ParticleSystem particle = Instantiate(coinParticles, transform.position, Quaternion.identity);
+            particle.Play();
+            Destroy(particle.gameObject, particle.main.duration);
         }
     }
 

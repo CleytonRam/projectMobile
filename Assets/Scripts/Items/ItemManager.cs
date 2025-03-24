@@ -4,7 +4,7 @@ using UnityEngine;
 using Ebac.Core.Singleton;
 using UnityEngine.UI;
 using TMPro;
-using static UnityEditor.Timeline.TimelinePlaybackControls;
+
 
 
 public class ItemManager : Singleton <ItemManager> {

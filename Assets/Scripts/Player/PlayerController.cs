@@ -32,6 +32,10 @@ public class PlayerController : Singleton<PlayerController>
     [Header("Animation")]
     public AnimatorManager animatorManager;
 
+    [Header("VFX")]
+    public ParticleSystem vfxDeath;
+
+
     [SerializeField] private BounceHelper _bounceHelper;
     public Ease ease = Ease.OutBack;
     public float playerScaleDuration = .5f;
@@ -51,10 +55,6 @@ public class PlayerController : Singleton<PlayerController>
         _startPosition = transform.position;
         ResetSpeed();
         ScaleAtStart();
-
-      
-
-
     }
 
 
@@ -117,8 +117,10 @@ public class PlayerController : Singleton<PlayerController>
         _canRun = false;
         endScreen.SetActive(true);
         animatorManager.Play(animationType);
-        
-
+        if (vfxDeath != null)
+        {
+            vfxDeath.Play();
+        }
     }
 
     public void StartToRun()
