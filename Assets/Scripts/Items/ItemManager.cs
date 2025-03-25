@@ -7,7 +7,7 @@ using TMPro;
 
 
 
-public class ItemManager : Singleton <ItemManager> {
+public class ItemManager : Singleton <ItemManager> { 
 
 
   
